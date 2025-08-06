@@ -1,129 +1,177 @@
-# PDFMerge - Luxury Minimalist PDF Merge Web App
+# PDFMerge - Free PDF Merger for Students
 
-A clean, minimalistic, and luxurious web application for merging PDF documents. Built with vanilla HTML, CSS, and JavaScript with no frameworks required.
+A completely free, privacy-focused PDF merger created by a student, for students. No hidden fees, no watermarks, no registration required.
 
-## Features
+## 🌟 Features
 
-### Core Functionality
-- **Drag & Drop Interface**: Intuitive drag-and-drop area for adding PDF files
-- **File Browser**: Alternative file selection via browse button
-- **File Management**: Display uploaded files with name, size, and preview
-- **Reorder Files**: Drag-and-drop reordering of PDFs before merging
-- **Remove Files**: Individual file removal with smooth animations
-- **PDF Merging**: Client-side PDF merging using pdf-lib
-- **Progress Tracking**: Real-time progress indicator during merge process
-- **Download**: Direct download of merged PDF file
+- **100% Free**: No hidden fees, no premium features, no credit card required
+- **Privacy First**: All processing happens in your browser - files never leave your device
+- **No Limitations**: No file size limits, no watermarks, no restrictions
+- **Student Made**: Built by someone who understands student needs
+- **Simple & Fast**: Clean interface that gets the job done quickly
 
-### Design Features
-- **Luxury Minimalist Design**: Clean, modern interface with subtle animations
-- **Responsive Layout**: Optimized for both desktop and mobile devices
-- **Smooth Animations**: Elegant transitions and hover effects
-- **Scroll Animations**: Elements animate into view on scroll
-- **Privacy Focused**: All processing happens in the browser
-- **Accessible**: Semantic HTML and keyboard navigation support
+## 🚀 How It Works
 
-## Color Palette
-- **Primary**: `rgba(0,154,218,1)` - Professional blue
-- **Accent**: `rgba(0,36,58,1)` - Deep navy
-- **Base**: `#fff` - Clean white
-- **Typography**: Inter Tight font family
+1. **Upload Files**: Drag and drop your PDF files or click to browse
+2. **Arrange & Preview**: See all your files listed with their names and sizes
+3. **Merge Locally**: All processing happens in your browser using PDF-lib
+4. **Download Result**: Get your merged PDF instantly with a single click
 
-## Technical Stack
-- **HTML5**: Semantic markup with accessibility features
-- **CSS3**: Custom properties, flexbox, grid, animations
-- **Vanilla JavaScript**: ES6+ with modern APIs
-- **pdf-lib**: Client-side PDF processing library
-- **No Frameworks**: Pure web technologies only
+## 🛠️ Technical Details
 
-## Getting Started
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **PDF Processing**: PDF-lib library for client-side PDF manipulation
+- **Styling**: Custom CSS with modern design principles
+- **Responsive**: Mobile-first design that works on all devices
+- **Privacy**: Zero server-side processing - everything happens locally
 
-1. **Clone or Download**: Get the project files
-2. **Open**: Simply open `index.html` in a modern web browser
-3. **Use**: Start merging PDFs immediately - no installation required
+## 📁 Project Structure
 
-## File Structure
 ```
 mergePDF/
-├── index.html          # Main HTML structure
-├── styles.css          # All styling and animations
+├── index.html          # Home page with PDF merger
+├── about.html          # About page with story and mission
+├── how-it-works.html   # Technical details and process explanation
+├── privacy.html        # Privacy policy and data handling
+├── contact.html        # Contact form and FAQ
+├── styles.css          # Main stylesheet
 ├── script.js           # JavaScript functionality
 └── README.md           # This file
 ```
 
-## Browser Compatibility
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
+## 🎯 Pages Overview
 
-## Privacy & Security
-- **100% Client-Side**: All PDF processing happens in your browser
-- **No Server Upload**: Files never leave your device
-- **No Data Collection**: No tracking or analytics
-- **Secure**: Uses modern web security practices
+### Home Page (`index.html`)
+- Hero section with call-to-action
+- PDF upload and merging interface
+- Feature highlights
+- Story section
+- Privacy note
 
-## Usage Instructions
+### About Page (`about.html`)
+- The problem and solution
+- Creator introduction (Iviwe)
+- Mission and values
+- Call-to-action
 
-1. **Add PDFs**: Drag PDF files onto the upload area or click to browse
-2. **Organize**: Reorder files by dragging them in the file list
-3. **Remove**: Click the × button to remove unwanted files
-4. **Merge**: Click "Merge PDFs" to combine all files
-5. **Download**: Click "Download Merged PDF" to save the result
+### How It Works (`how-it-works.html`)
+- Step-by-step process explanation
+- Technical details
+- Feature explanations
+- Browser compatibility
 
-## Features in Detail
+### Privacy Page (`privacy.html`)
+- Privacy principles
+- Data handling explanation
+- Security measures
+- Third-party services
 
-### File Upload
-- Supports multiple file selection
-- Drag-and-drop from file explorer
-- Automatic PDF validation
-- File size display
-- Elegant file cards with animations
+### Contact Page (`contact.html`)
+- Contact information
+- Contact form
+- FAQ section
+- Feedback statistics
 
-### PDF Processing
-- Preserves original quality
-- Maintains page order
-- Handles various PDF types
-- Progress feedback
-- Error handling
+## 🔧 Setup and Installation
 
-### User Experience
-- Smooth animations throughout
-- Responsive design for all devices
-- Clear visual feedback
-- Intuitive workflow
-- Professional appearance
+1. **Clone or Download**: Get the project files
+2. **Open in Browser**: Simply open `index.html` in any modern web browser
+3. **Start Using**: No installation required - it's a static website!
 
-## Development Notes
+### Requirements
+- Modern web browser (Chrome 60+, Firefox 55+, Safari 11+, Edge 79+)
+- JavaScript enabled
+- No server setup required
 
-### CSS Architecture
-- CSS custom properties for theming
-- Mobile-first responsive design
-- Smooth transitions and animations
-- Component-based styling approach
+## 🎨 Design Features
 
-### JavaScript Features
-- ES6 class-based architecture
-- Async/await for PDF processing
-- Event delegation for performance
-- Intersection Observer for scroll animations
-- Modern DOM manipulation
+- **Modern UI**: Clean, professional design with smooth animations
+- **Responsive**: Works perfectly on desktop, tablet, and mobile
+- **Accessible**: Keyboard navigation and screen reader friendly
+- **Fast**: Optimized for performance with minimal dependencies
+- **Cross-browser**: Tested and working on all major browsers
 
-### Performance
-- Optimized animations using CSS transforms
-- Efficient file handling
-- Minimal DOM manipulation
-- Lazy loading of animations
+## 🔒 Privacy & Security
 
-## Future Enhancements (Optional)
-- PDF page preview thumbnails
-- Page range selection
-- PDF compression options
-- Split PDF functionality
-- Extract specific pages
-- Batch processing improvements
+- **Local Processing**: All PDF operations happen in your browser
+- **No Uploads**: Files never leave your device
+- **No Tracking**: No analytics or tracking scripts
+- **No Storage**: No data is stored on any server
+- **HTTPS Ready**: Secure when hosted on HTTPS
 
-## License
-All rights reserved © 2024 PDFMerge
+## 🌐 Browser Compatibility
 
-## Support
-This is a client-side application that works entirely in your browser. No server or backend support is required.
+| Browser | Version | Status |
+|---------|---------|--------|
+| Chrome | 60+ | ✅ Full Support |
+| Firefox | 55+ | ✅ Full Support |
+| Safari | 11+ | ✅ Full Support |
+| Edge | 79+ | ✅ Full Support |
+
+## 📱 Mobile Support
+
+- Fully responsive design
+- Touch-friendly interface
+- Mobile-optimized navigation
+- Swipe gestures for file reordering
+
+## 🚀 Performance
+
+- **Lightning Fast**: Client-side processing means no server delays
+- **Memory Efficient**: Optimized for large file handling
+- **Progressive Loading**: Smooth animations and transitions
+- **Minimal Dependencies**: Only PDF-lib for PDF processing
+
+## 🤝 Contributing
+
+This is an open-source project created to help students. Contributions are welcome!
+
+### How to Contribute
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+### Areas for Improvement
+- Additional file format support
+- Enhanced UI/UX features
+- Performance optimizations
+- Accessibility improvements
+- Mobile app version
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👨‍💻 Creator
+
+**Iviwe** - A student who believes in free tools for education
+
+Created this tool because I struggled to find free PDF merging tools online. Almost all of them required payment or had hidden fees. That's why I created PDFMerge - a completely free tool that students can use without worrying about costs.
+
+## 🙏 Acknowledgments
+
+- **PDF-lib**: The amazing JavaScript library that makes PDF processing possible
+- **Inter Tight Font**: Beautiful typography from Google Fonts
+- **Student Community**: For the inspiration and feedback
+
+## 📞 Contact
+
+- **Email**: contact@pdfmerge.com
+- **GitHub**: github.com/iviwe/pdfmerge
+- **Issues**: github.com/iviwe/pdfmerge/issues
+
+## 🎯 Mission
+
+PDFMerge exists to provide students with free, reliable tools that support their educational journey. We believe that:
+
+- **Education Should Be Free**: Students shouldn't have to pay for basic tools
+- **Privacy Matters**: Your documents are personal and should remain private
+- **Simplicity Works**: Tools should be easy to use and get the job done
+
+---
+
+**Made with ❤️ for students, by a student**
+
+*"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela*

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - PDFMerge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M8 10h16M8 14h12M8 18h16M8 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-text">PDFMerge</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="how-it-works.html" class="nav-link active">How It Works</a>
+                    <a href="privacy.html" class="nav-link">Privacy</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>How PDFMerge Works</h1>
+                    <p>Learn how our free PDF merger processes your files securely and efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works-content">
+            <div class="container">
+                <div class="process-overview">
+                    <h2>The Process</h2>
+                    <p>PDFMerge uses advanced browser technology to merge your PDF files locally. Here's exactly what happens:</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Upload Your Files</h3>
+                            <p>Drag and drop your PDF files into the upload area or click to browse. You can select multiple files at once. PDFMerge accepts all standard PDF files.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Multiple files</span>
+                                <span class="feature-tag">Drag & drop</span>
+                                <span class="feature-tag">No size limits</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Arrange & Preview</h3>
+                            <p>See all your files listed with their names and sizes. You can drag to reorder them, remove unwanted files, or add more. The order determines how they'll appear in the final merged PDF.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Drag to reorder</span>
+                                <span class="feature-tag">Remove files</span>
+                                <span class="feature-tag">Add more files</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Merge Locally</h3>
+                            <p>Click "Merge PDFs" and watch the magic happen! All processing occurs in your browser using PDF-lib, a powerful JavaScript library. Your files never leave your device.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Browser processing</span>
+                                <span class="feature-tag">No uploads</span>
+                                <span class="feature-tag">Real-time progress</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Download Result</h3>
+                            <p>Your merged PDF is ready! Download it instantly with a single click. The file maintains the original quality and formatting of all your source documents.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Instant download</span>
+                                <span class="feature-tag">Original quality</span>
+                                <span class="feature-tag">No watermarks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technical-details">
+                    <h2>Technical Details</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h3>Browser-Based Processing</h3>
+                            <p>PDFMerge uses PDF-lib, a powerful JavaScript library that runs entirely in your web browser. This means:</p>
+                            <ul>
+                                <li>No server uploads required</li>
+                                <li>No internet dependency after page load</li>
+                                <li>Complete privacy protection</li>
+                                <li>Works offline once loaded</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <h3>File Handling</h3>
+                            <p>Your PDF files are processed using the File API and Web Workers:</p>
+                            <ul>
+                                <li>Files stay on your device</li>
+                                <li>No temporary storage on servers</li>
+                                <li>Automatic cleanup after processing</li>
+                                <li>Memory efficient processing</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <h3>Security & Privacy</h3>
+                            <p>Your documents are completely secure because:</p>
+                            <ul>
+                                <li>No files are uploaded anywhere</li>
+                                <li>No data is stored or transmitted</li>
+                                <li>Processing happens locally</li>
+                                <li>No tracking or analytics on files</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-explained">
+                    <h2>Key Features Explained</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Drag & Drop Interface</h3>
+                                <p>Simply drag your PDF files from your computer folder and drop them into the upload area. The interface will highlight when files are detected.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6H20M4 12H20M4 18H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Reorder Files</h3>
+                                <p>Drag files up or down in the list to change their order. The merged PDF will follow this exact sequence.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Progress Tracking</h3>
+                                <p>See real-time progress as your files are being merged. The progress bar shows exactly what's happening.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 3V15M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Instant Download</h3>
+                                <p>Once merging is complete, download your file immediately. No waiting, no email required, no registration needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="compatibility-section">
+                    <h2>Browser Compatibility</h2>
+                    <p>PDFMerge works on all modern browsers that support the File API and Web Workers:</p>
+                    <div class="browser-list">
+                        <div class="browser-item">
+                            <span class="browser-name">Chrome</span>
+                            <span class="browser-version">Version 60+</span>
+                        </div>
+                        <div class="browser-item">
+                            <span class="browser-name">Firefox</span>
+                            <span class="browser-version">Version 55+</span>
+                        </div>
+                        <div class="browser-item">
+                            <span class="browser-name">Safari</span>
+                            <span class="browser-version">Version 11+</span>
+                        </div>
+                        <div class="browser-item">
+                            <span class="browser-name">Edge</span>
+                            <span class="browser-version">Version 79+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Try It?</h2>
+                    <p>Now that you know how it works, give PDFMerge a try!</p>
+                    <a href="index.html#upload" class="btn btn-primary">Start Merging PDFs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PDFMerge</h4>
+                    <p>Free PDF merging for students, by students.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Created by</h4>
+                    <p>Iviwe</p>
+                    <p>A student who believes in free tools for education</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PDFMerge by Iviwe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

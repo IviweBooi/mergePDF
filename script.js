@@ -5,6 +5,8 @@ class PDFMergeApp {
         this.initializeElements();
         this.bindEvents();
         this.initializeScrollAnimations();
+        this.initializeMobileMenu();
+        this.initializeContactForm();
     }
 
     initializeElements() {
@@ -374,6 +376,64 @@ class PDFMergeApp {
                 }
             }, 300);
         }, 4000);
+    }
+
+    initializeMobileMenu() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // Close menu when clicking on a link
+            navMenu.addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-link')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    initializeContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.handleContactFormSubmit(contactForm);
+            });
+        }
+    }
+
+    handleContactFormSubmit(form) {
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+            newsletter: formData.get('newsletter') === 'on'
+        };
+
+        // Simulate form submission (in a real app, you'd send this to a server)
+        console.log('Contact form submitted:', data);
+        
+        // Show success message
+        this.showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+        
+        // Reset form
+        form.reset();
     }
 }
 

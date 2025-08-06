@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDFMerge - Merge PDFs. Elegantly.</title>
+    <title>PDFMerge - Free PDF Merger for Students</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,12 +12,26 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <path d="M8 10h16M8 14h12M8 18h16M8 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-                <span class="logo-text">PDFMerge</span>
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M8 10h16M8 14h12M8 18h16M8 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-text">PDFMerge</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="privacy.html" class="nav-link">Privacy</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -26,8 +40,12 @@
         <section class="hero" id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Merge PDFs. Elegantly.</h1>
-                    <p class="hero-subtitle">Combine multiple PDF documents into one with our clean, privacy-focused tool. All processing happens in your browser.</p>
+                    <h1 class="hero-title">Merge PDFs. For Free.</h1>
+                    <p class="hero-subtitle">Created by a student, for students. No payment required, no hidden fees. Just a simple, free PDF merger that works.</p>
+                    <div class="hero-buttons">
+                        <a href="#upload" class="btn btn-primary">Start Merging</a>
+                        <a href="how-it-works.html" class="btn btn-secondary">Learn How</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -81,7 +99,7 @@
 
         <section class="features" id="features">
             <div class="container">
-                <h2 class="section-title">Why Choose PDFMerge?</h2>
+                <h2 class="section-title">Why Students Choose PDFMerge?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -90,8 +108,8 @@
                                 <path d="M16 4V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3>Privacy First</h3>
-                        <p>All processing happens in your browser. Your files never leave your device.</p>
+                        <h3>100% Free</h3>
+                        <p>No hidden fees, no premium features, no credit card required. Just pure, free PDF merging.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -100,8 +118,8 @@
                                 <path d="M12 16L15 19L20 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3>Fast & Reliable</h3>
-                        <p>Lightning-fast merging with no file size limits or quality loss.</p>
+                        <h3>Privacy First</h3>
+                        <p>All processing happens in your browser. Your files never leave your device, ensuring complete privacy.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -109,9 +127,19 @@
                                 <path d="M4 16H28M16 4V28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3>Easy to Use</h3>
-                        <p>Simple drag-and-drop interface with intuitive controls.</p>
+                        <h3>Student Made</h3>
+                        <p>Created by a student who understands the struggle of finding free tools. Built with students in mind.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content">
+                    <h2>The Story Behind PDFMerge</h2>
+                    <p>As a student, I struggled to find free PDF merging tools online. Almost all of them required payment or had hidden fees. That's why I created PDFMerge - a completely free tool that students can use without worrying about costs.</p>
+                    <a href="about.html" class="btn btn-secondary">Read More</a>
                 </div>
             </div>
         </section>
@@ -128,7 +156,27 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 PDFMerge. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PDFMerge</h4>
+                    <p>Free PDF merging for students, by students.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Created by</h4>
+                    <p>Iviwe</p>
+                    <p>A student who believes in free tools for education</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PDFMerge by Iviwe. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

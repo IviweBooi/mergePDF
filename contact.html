@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - PDFMerge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M8 10h16M8 14h12M8 18h16M8 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-text">PDFMerge</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="privacy.html" class="nav-link">Privacy</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Contact Us</h1>
+                    <p>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>As a student-created tool, I'm always interested in hearing from other students about their experiences with PDFMerge. Whether you have feedback, suggestions for improvements, or just want to say hello, feel free to reach out!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>Email</h3>
+                                    <p>For general inquiries and feedback</p>
+                                    <a href="mailto:contact@pdfmerge.com" class="contact-link">contact@pdfmerge.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>GitHub</h3>
+                                    <p>For technical issues and contributions</p>
+                                    <a href="https://github.com/iviwe/pdfmerge" class="contact-link">github.com/iviwe/pdfmerge</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M12 12L16 8M12 12L8 8M12 12V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>Report Issues</h3>
+                                    <p>Found a bug or have a feature request?</p>
+                                    <a href="https://github.com/iviwe/pdfmerge/issues" class="contact-link">Report on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <div class="contact-form">
+                            <h2>Send a Message</h2>
+                            <form id="contactForm" class="form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="feedback">General Feedback</option>
+                                        <option value="bug">Bug Report</option>
+                                        <option value="feature">Feature Request</option>
+                                        <option value="privacy">Privacy Question</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="6" required placeholder="Tell us what's on your mind..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="newsletter" name="newsletter">
+                                        <span class="checkmark"></span>
+                                        I'd like to receive updates about PDFMerge (optional)
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>Is PDFMerge really free?</h3>
+                            <p>Yes! PDFMerge is completely free to use. There are no hidden fees, no premium features, and no credit card required. I created this tool specifically for students who need free alternatives to expensive PDF software.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>How do you make money if it's free?</h3>
+                            <p>I don't make money from PDFMerge. This is a passion project created to help students. I believe that educational tools should be accessible to everyone, regardless of their financial situation.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Can I use PDFMerge for commercial purposes?</h3>
+                            <p>Yes, you can use PDFMerge for any purpose - personal, educational, or commercial. The tool is free for everyone to use.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>What file formats does PDFMerge support?</h3>
+                            <p>Currently, PDFMerge only supports PDF files. The tool is designed specifically for merging PDF documents, which is the most common need for students and professionals.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Is there a file size limit?</h3>
+                            <p>There's no artificial file size limit imposed by PDFMerge. However, very large files may be limited by your browser's memory capacity. For best results, try to keep individual files under 100MB.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Can I contribute to PDFMerge?</h3>
+                            <p>Absolutely! PDFMerge is open source and I welcome contributions from other developers. You can find the source code on GitHub and submit issues, feature requests, or pull requests.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-section">
+                    <h2>Your Feedback Matters</h2>
+                    <p>As a student developer, I'm constantly learning and improving. Your feedback helps me understand what features students need most and how to make PDFMerge better for everyone. Whether it's a bug report, feature suggestion, or just a kind word, I appreciate hearing from users.</p>
+                    
+                    <div class="feedback-stats">
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Free to use</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>0</h3>
+                            <p>Files uploaded to servers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>∞</h3>
+                            <p>Students helped</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Try PDFMerge?</h2>
+                    <p>Join thousands of students who are already using PDFMerge for free.</p>
+                    <a href="index.html#upload" class="btn btn-primary">Start Merging Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PDFMerge</h4>
+                    <p>Free PDF merging for students, by students.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Created by</h4>
+                    <p>Iviwe</p>
+                    <p>A student who believes in free tools for education</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PDFMerge by Iviwe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
