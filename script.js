@@ -5,11 +5,10 @@ class PDFMergeApp {
         this.initializeElements();
         this.bindEvents();
         this.initializeScrollAnimations();
-        this.initializeMobileMenu();
-        this.initializeContactForm();
     }
 
     initializeElements() {
+        // Initialize elements only if they exist (for index page)
         this.uploadArea = document.getElementById('uploadArea');
         this.uploadOverlay = document.getElementById('uploadOverlay');
         this.fileInput = document.getElementById('fileInput');
@@ -27,24 +26,34 @@ class PDFMergeApp {
     }
 
     bindEvents() {
-        // File upload events
-        this.uploadArea.addEventListener('click', () => this.fileInput.click());
-        this.browseBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.fileInput.click();
-        });
-        this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
+        // Only bind events if elements exist (index page only)
+        if (this.uploadArea && this.fileInput) {
+            // File upload events
+            this.uploadArea.addEventListener('click', () => this.fileInput.click());
+            this.browseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.fileInput.click();
+            });
+            this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
 
-        // Drag and drop events
-        this.uploadArea.addEventListener('dragover', (e) => this.handleDragOver(e));
-        this.uploadArea.addEventListener('dragleave', (e) => this.handleDragLeave(e));
-        this.uploadArea.addEventListener('drop', (e) => this.handleDrop(e));
+            // Drag and drop events
+            this.uploadArea.addEventListener('dragover', (e) => this.handleDragOver(e));
+            this.uploadArea.addEventListener('dragleave', (e) => this.handleDragLeave(e));
+            this.uploadArea.addEventListener('drop', (e) => this.handleDrop(e));
+        }
 
-        // Control buttons
-        this.mergeBtn.addEventListener('click', () => this.mergePDFs());
-        this.clearBtn.addEventListener('click', () => this.clearFiles());
-        this.downloadBtn.addEventListener('click', () => this.downloadMergedPDF());
-        this.newMergeBtn.addEventListener('click', () => this.startNewMerge());
+        if (this.mergeBtn) {
+            this.mergeBtn.addEventListener('click', () => this.mergePDFs());
+        }
+        if (this.clearBtn) {
+            this.clearBtn.addEventListener('click', () => this.clearFiles());
+        }
+        if (this.downloadBtn) {
+            this.downloadBtn.addEventListener('click', () => this.downloadMergedPDF());
+        }
+        if (this.newMergeBtn) {
+            this.newMergeBtn.addEventListener('click', () => this.startNewMerge());
+        }
 
         // Prevent default drag behaviors on document
         document.addEventListener('dragover', (e) => e.preventDefault());
@@ -378,69 +387,121 @@ class PDFMergeApp {
         }, 4000);
     }
 
-    initializeMobileMenu() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenuBtn && navMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileMenuBtn.classList.toggle('active');
-            });
 
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                }
-            });
-
-            // Close menu when clicking on a link
-            navMenu.addEventListener('click', (e) => {
-                if (e.target.classList.contains('nav-link')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                }
-            });
-        }
-    }
-
-    initializeContactForm() {
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.handleContactFormSubmit(contactForm);
-            });
-        }
-    }
-
-    handleContactFormSubmit(form) {
-        const formData = new FormData(form);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message'),
-            newsletter: formData.get('newsletter') === 'on'
-        };
-
-        // Simulate form submission (in a real app, you'd send this to a server)
-        console.log('Contact form submitted:', data);
-        
-        // Show success message
-        this.showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        
-        // Reset form
-        form.reset();
-    }
 }
 
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.app = new PDFMergeApp();
+    // Initialize mobile menu for all pages
+    initializeMobileMenu();
+    
+    // Initialize contact form for contact page
+    initializeContactForm();
+    
+    // Initialize PDF merger only on index page
+    if (document.getElementById('uploadArea')) {
+        window.app = new PDFMergeApp();
+    }
 });
+
+// Mobile menu functionality for all pages
+function initializeMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-link')) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Contact form functionality for contact page
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleContactFormSubmit(contactForm);
+        });
+    }
+}
+
+function handleContactFormSubmit(form) {
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        newsletter: formData.get('newsletter') === 'on'
+    };
+
+    // Simulate form submission (in a real app, you'd send this to a server)
+    console.log('Contact form submitted:', data);
+    
+    // Show success message
+    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+    
+    // Reset form
+    form.reset();
+}
+
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 24px;
+        background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : type === 'warning' ? '#ffc107' : '#007bff'};
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        font-family: var(--font-family);
+        font-weight: 500;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+
+    document.body.appendChild(notification);
+
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+
+    // Remove after 4 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+}
 
 // Add smooth scrolling for anchor links
 document.addEventListener('click', (e) => {

@@ -146,7 +146,7 @@ This project is open source and available under the MIT License.
 
 ## 👨‍💻 Creator
 
-**Iviwe** - A student who believes in free tools for education
+**Iviwe Booi** - A student who believes in free tools for education
 
 Created this tool because I struggled to find free PDF merging tools online. Almost all of them required payment or had hidden fees. That's why I created PDFMerge - a completely free tool that students can use without worrying about costs.
 
