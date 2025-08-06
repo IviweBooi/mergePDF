@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFMerge - Merge PDFs. Elegantly.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M8 10h16M8 14h12M8 18h16M8 22h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">PDFMerge</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Merge PDFs. Elegantly.</h1>
+                    <p class="hero-subtitle">Combine multiple PDF documents into one with our clean, privacy-focused tool. All processing happens in your browser.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="upload-section" id="upload">
+            <div class="container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg class="upload-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8V32M16 16L24 8L32 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 32V36C8 38.2091 9.79086 40 12 40H36C38.2091 40 40 38.2091 40 36V32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <h3>Drop PDF files here</h3>
+                        <p>or <button class="browse-btn" id="browseBtn">browse files</button></p>
+                        <input type="file" id="fileInput" accept=".pdf" multiple hidden>
+                    </div>
+                    <div class="upload-overlay" id="uploadOverlay"></div>
+                </div>
+
+                <div class="file-list" id="fileList"></div>
+
+                <div class="merge-controls" id="mergeControls" style="display: none;">
+                    <button class="btn btn-primary" id="mergeBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3V17M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Merge PDFs
+                    </button>
+                    <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+                </div>
+
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Merging PDFs...</p>
+                </div>
+
+                <div class="download-container" id="downloadContainer" style="display: none;">
+                    <button class="btn btn-success" id="downloadBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3V15M6 11L10 15L14 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 15V17C3 18.1046 3.89543 19 5 19H15C16.1046 19 17 18.1046 17 17V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Download Merged PDF
+                    </button>
+                    <button class="btn btn-secondary" id="newMergeBtn">Start New Merge</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose PDFMerge?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4L20 8H28V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24V6C4 4.89543 4.89543 4 6 4H16Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 4V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>All processing happens in your browser. Your files never leave your device.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 16L15 19L20 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Fast & Reliable</h3>
+                        <p>Lightning-fast merging with no file size limits or quality loss.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 16H28M16 4V28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Easy to Use</h3>
+                        <p>Simple drag-and-drop interface with intuitive controls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="privacy-note" id="privacy">
+            <div class="container">
+                <div class="privacy-content">
+                    <h3>Your Privacy Matters</h3>
+                    <p>PDFMerge processes all files locally in your browser using advanced JavaScript libraries. No files are uploaded to any server, ensuring complete privacy and security of your documents.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 PDFMerge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
