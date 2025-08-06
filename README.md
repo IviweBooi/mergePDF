@@ -88,7 +88,7 @@ mergePDF/
 - **Modern UI**: Clean, professional design with smooth animations
 - **Responsive**: Works perfectly on desktop, tablet, and mobile
 - **Accessible**: Keyboard navigation and screen reader friendly
-- **Fast**: Optimized for performance with minimal dependencies
+- **Fast**: Optimised for performance with minimal dependencies
 - **Cross-browser**: Tested and working on all major browsers
 
 ## 🔒 Privacy & Security
@@ -112,7 +112,7 @@ mergePDF/
 
 - Fully responsive design
 - Touch-friendly interface
-- Mobile-optimized navigation
+- Mobile-optimised navigation
 - Swipe gestures for file reordering
 
 ## 🚀 Performance
@@ -136,7 +136,7 @@ This is an open-source project created to help students. Contributions are welco
 ### Areas for Improvement
 - Additional file format support
 - Enhanced UI/UX features
-- Performance optimizations
+- Performance optimisations
 - Accessibility improvements
 - Mobile app version
 
@@ -146,7 +146,7 @@ This project is open source and available under the MIT License.
 
 ## 👨‍💻 Creator
 
-**Iviwe** - A student who believes in free tools for education
+**Iviwe Booi** - A student who believes in free tools for education
 
 Created this tool because I struggled to find free PDF merging tools online. Almost all of them required payment or had hidden fees. That's why I created PDFMerge - a completely free tool that students can use without worrying about costs.
 
@@ -158,9 +158,9 @@ Created this tool because I struggled to find free PDF merging tools online. Alm
 
 ## 📞 Contact
 
-- **Email**: contact@pdfmerge.com
-- **GitHub**: github.com/iviwe/pdfmerge
-- **Issues**: github.com/iviwe/pdfmerge/issues
+- **Email**: booiiviwe4394@gmail.com
+- **GitHub**: github.com/IviweBooi/mergePDF
+- **Issues**: github.com/IviweBooi/mergePDF/issues
 
 ## 🎯 Mission
 
