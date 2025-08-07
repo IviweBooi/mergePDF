@@ -335,6 +335,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
 }
 
 .file-size {
@@ -1767,6 +1769,14 @@ body {
   
   .file-info {
     order: -1;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .file-name {
+    max-width: 100%;
+    width: 100%;
+    font-size: 0.9rem;
   }
   
   .page-hero-content h1 {
