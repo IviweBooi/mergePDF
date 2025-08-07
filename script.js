@@ -236,7 +236,7 @@ class PDFMergeApp {
 
     updateControls() {
         if (this.files.length > 0) {
-            this.mergeControls.style.display = 'block';
+            this.mergeControls.style.display = 'flex';
         } else {
             this.mergeControls.style.display = 'none';
         }
@@ -306,7 +306,7 @@ class PDFMergeApp {
     }
 
     showDownload() {
-        this.downloadContainer.style.display = 'block';
+        this.downloadContainer.style.display = 'flex';
     }
 
     hideAllContainers() {
