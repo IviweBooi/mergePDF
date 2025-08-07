@@ -84,7 +84,7 @@ body {
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 300;
   transition: var(--transition-fast);
@@ -239,7 +239,7 @@ body {
 
 .upload-area h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 8px;
 }
@@ -411,7 +411,6 @@ body {
 }
 
 .btn-primary:hover {
-  background: rgba(0, 154, 218, 0.9);
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
 }
@@ -444,6 +443,7 @@ body {
 .merge-controls {
   display: flex;
   gap: 16px;
+  align-items: center;
   justify-content: center;
   margin-bottom: 40px;
   opacity: 0;
@@ -1575,6 +1575,28 @@ body {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  justify-content: start;
+}
+
+.social-links img{
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.social-links img:hover{
+  transform: scale(1.1);
+}
+
+
+
+
+
 
 /* Animations */
 @keyframes fadeInUp {
