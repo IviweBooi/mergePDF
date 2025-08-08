@@ -9,6 +9,13 @@ A completely free, privacy-focused PDF merger created by a student, for students
 - **No Limitations**: No file size limits, no watermarks, no restrictions
 - **Student Made**: Built by someone who understands student needs
 - **Simple & Fast**: Clean interface that gets the job done quickly
+- **Drag & Drop**: Intuitive file upload with drag and drop support
+- **File Reordering**: Drag files to reorder them before merging
+- **Real-time Validation**: Comprehensive form validation with instant feedback
+- **Email Integration**: Contact form with EmailJS integration for real email sending
+- **Mobile Optimized**: Perfect experience on all devices and screen sizes
+- **Progress Tracking**: Visual progress bar during PDF merging
+- **File Management**: Easy file removal and list management
 
 ## 🚀 How It Works
 
@@ -21,22 +28,28 @@ A completely free, privacy-focused PDF merger created by a student, for students
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **PDF Processing**: PDF-lib library for client-side PDF manipulation
-- **Styling**: Custom CSS with modern design principles
+- **Email Integration**: EmailJS for contact form functionality
+- **Form Validation**: Custom validation system with real-time feedback
+- **Styling**: Custom CSS with modern design principles and animations
 - **Responsive**: Mobile-first design that works on all devices
 - **Privacy**: Zero server-side processing - everything happens locally
+- **Drag & Drop**: Native HTML5 drag and drop API
+- **File Handling**: Advanced file management with size formatting
 
 ## 📁 Project Structure
 
 ```
 mergePDF/
-├── index.html          # Home page with PDF merger
-├── about.html          # About page with story and mission
-├── how-it-works.html   # Technical details and process explanation
-├── privacy.html        # Privacy policy and data handling
-├── contact.html        # Contact form and FAQ
-├── styles.css          # Main stylesheet
-├── script.js           # JavaScript functionality
-└── README.md           # This file
+├── index.html              # Home page with PDF merger
+├── about.html              # About page with story and mission
+├── how-it-works.html       # Technical details and process explanation
+├── privacy.html            # Privacy policy and data handling
+├── contact.html            # Contact form and FAQ
+├── styles.css              # Main stylesheet with responsive design
+├── script.js               # JavaScript functionality and form validation
+├── config.js               # EmailJS configuration
+├── EMAILJS_SETUP.md        # EmailJS setup guide
+└── README.md               # This file
 ```
 
 ## 🎯 Pages Overview
@@ -67,10 +80,12 @@ mergePDF/
 - Third-party services
 
 ### Contact Page (`contact.html`)
-- Contact information
-- Contact form
-- FAQ section
-- Feedback statistics
+- Contact information and methods
+- Interactive contact form with EmailJS integration
+- Real-time form validation with visual feedback
+- Character counter for message field
+- FAQ section with common questions
+- Feedback statistics and testimonials
 
 ## 🔧 Setup and Installation
 
@@ -78,10 +93,17 @@ mergePDF/
 2. **Open in Browser**: Simply open `index.html` in any modern web browser
 3. **Start Using**: No installation required - it's a static website!
 
+### EmailJS Setup (Optional)
+To enable email functionality on the contact form:
+1. Follow the setup guide in `EMAILJS_SETUP.md`
+2. Update `config.js` with your EmailJS credentials
+3. Test the contact form
+
 ### Requirements
 - Modern web browser (Chrome 60+, Firefox 55+, Safari 11+, Edge 79+)
 - JavaScript enabled
 - No server setup required
+- EmailJS account (optional, for contact form emails)
 
 ## 🎨 Design Features
 
@@ -90,6 +112,10 @@ mergePDF/
 - **Accessible**: Keyboard navigation and screen reader friendly
 - **Fast**: Optimised for performance with minimal dependencies
 - **Cross-browser**: Tested and working on all major browsers
+- **Interactive Elements**: Hover effects, transitions, and micro-interactions
+- **Form Validation**: Real-time validation with visual feedback
+- **Loading States**: Progress indicators and loading animations
+- **Mobile Navigation**: Hamburger menu for mobile devices
 
 ## 🔒 Privacy & Security
 
@@ -121,6 +147,9 @@ mergePDF/
 - **Memory Efficient**: Optimized for large file handling
 - **Progressive Loading**: Smooth animations and transitions
 - **Minimal Dependencies**: Only PDF-lib for PDF processing
+- **Form Validation**: Instant feedback without page reloads
+- **File Handling**: Efficient drag and drop with visual feedback
+- **Mobile Optimized**: Touch-friendly interface with responsive design
 
 ## 🤝 Contributing
 
@@ -134,11 +163,14 @@ This is an open-source project created to help students. Contributions are welco
 5. Submit a pull request
 
 ### Areas for Improvement
-- Additional file format support
-- Enhanced UI/UX features
-- Performance optimisations
-- Accessibility improvements
-- Mobile app version
+- Additional file format support (Word, Excel, etc.)
+- Enhanced UI/UX features and animations
+- Performance optimisations for large files
+- Accessibility improvements and ARIA labels
+- Mobile app version (PWA)
+- Advanced PDF features (compression, password protection)
+- Batch processing capabilities
+- Cloud storage integration
 
 ## 📄 License
 
@@ -153,8 +185,10 @@ Created this tool because I struggled to find free PDF merging tools online. Alm
 ## 🙏 Acknowledgments
 
 - **PDF-lib**: The amazing JavaScript library that makes PDF processing possible
+- **EmailJS**: For providing seamless email integration
 - **Inter Tight Font**: Beautiful typography from Google Fonts
 - **Student Community**: For the inspiration and feedback
+- **Open Source Community**: For the tools and libraries that make this possible
 
 ## 📞 Contact
 

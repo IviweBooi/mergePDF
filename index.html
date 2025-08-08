@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with configuration
+        (function(){
+            emailjs.init({
+                publicKey: window.CONFIG.EMAILJS_PUBLIC_KEY,
+            });
+        })();
+    </script>
 </head>
 <body>
     <header class="header">

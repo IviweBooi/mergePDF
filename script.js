@@ -433,74 +433,261 @@ function initializeMobileMenu() {
     }
 }
 
-// Contact form functionality for contact page
-function initializeContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleContactFormSubmit(contactForm);
+// Form Validation System
+class FormValidator {
+    constructor() {
+        this.validators = {
+            name: {
+                required: true,
+                minLength: 2,
+                maxLength: 50,
+                pattern: /^[a-zA-Z\s]+$/,
+                messages: {
+                    required: 'Name is required',
+                    minLength: 'Name must be at least 2 characters',
+                    maxLength: 'Name must be less than 50 characters',
+                    pattern: 'Name can only contain letters and spaces'
+                }
+            },
+            email: {
+                required: true,
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                messages: {
+                    required: 'Email is required',
+                    pattern: 'Please enter a valid email address'
+                }
+            },
+            subject: {
+                required: true,
+                messages: {
+                    required: 'Please select a subject'
+                }
+            },
+            message: {
+                required: true,
+                minLength: 10,
+                maxLength: 1000,
+                messages: {
+                    required: 'Message is required',
+                    minLength: 'Message must be at least 10 characters',
+                    maxLength: 'Message must be less than 1000 characters'
+                }
+            }
+        };
+        
+        this.initializeValidation();
+    }
+
+    initializeValidation() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        // Add event listeners for real-time validation
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => this.validateField(input));
+            input.addEventListener('input', () => this.validateField(input));
         });
+
+        // Character counter for message
+        const messageTextarea = document.getElementById('message');
+        if (messageTextarea) {
+            messageTextarea.addEventListener('input', () => this.updateCharCounter(messageTextarea));
+        }
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleFormSubmit(form);
+        });
+    }
+
+    validateField(field) {
+        const fieldName = field.name;
+        const value = field.value.trim();
+        const validator = this.validators[fieldName];
+        
+        if (!validator) return true;
+
+        const group = field.closest('.form-group');
+        const errorElement = group.querySelector('.error-message');
+        
+        // Clear previous states
+        group.classList.remove('error', 'success');
+        
+        // Check required
+        if (validator.required && !value) {
+            this.showFieldError(group, errorElement, validator.messages.required);
+            return false;
+        }
+
+        // Check min length
+        if (validator.minLength && value.length < validator.minLength) {
+            this.showFieldError(group, errorElement, validator.messages.minLength);
+            return false;
+        }
+
+        // Check max length
+        if (validator.maxLength && value.length > validator.maxLength) {
+            this.showFieldError(group, errorElement, validator.messages.maxLength);
+            return false;
+        }
+
+        // Check pattern
+        if (validator.pattern && !validator.pattern.test(value)) {
+            this.showFieldError(group, errorElement, validator.messages.pattern);
+            return false;
+        }
+
+        // Field is valid
+        this.showFieldSuccess(group, errorElement);
+        return true;
+    }
+
+    showFieldError(group, errorElement, message) {
+        group.classList.add('error');
+        if (errorElement) {
+            errorElement.textContent = message;
+        }
+    }
+
+    showFieldSuccess(group, errorElement) {
+        group.classList.add('success');
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
+    }
+
+    updateCharCounter(textarea) {
+        const counter = document.getElementById('charCounter');
+        if (!counter) return;
+
+        const length = textarea.value.length;
+        const maxLength = 1000;
+        counter.textContent = `${length} / ${maxLength} characters`;
+
+        // Update counter color based on length
+        counter.classList.remove('warning', 'error');
+        if (length > maxLength * 0.8) {
+            counter.classList.add('warning');
+        }
+        if (length > maxLength) {
+            counter.classList.add('error');
+        }
+    }
+
+    validateForm(form) {
+        const fields = form.querySelectorAll('input, select, textarea');
+        let isValid = true;
+
+        fields.forEach(field => {
+            if (!this.validateField(field)) {
+                isValid = false;
+            }
+        });
+
+        return isValid;
+    }
+
+    async handleFormSubmit(form) {
+        if (!this.validateForm(form)) {
+            this.showFormFeedback('Please correct the errors above.', 'error');
+            return;
+        }
+
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.classList.add('btn-loading');
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            // Simulate API call
+            await this.simulateFormSubmission(form);
+            
+            this.showFormFeedback('Thank you for your message! We\'ll get back to you soon.', 'success');
+            form.reset();
+            this.clearAllValidationStates();
+            
+        } catch (error) {
+            this.showFormFeedback('Sorry, there was an error sending your message. Please try again.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.classList.remove('btn-loading');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    }
+
+    async simulateFormSubmission(form) {
+        return new Promise((resolve, reject) => {
+            // Get form data
+            const formData = new FormData(form);
+            const templateParams = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                newsletter: formData.get('newsletter') === 'on' ? 'Yes' : 'No'
+            };
+
+            // Send email using EmailJS
+            emailjs.send(
+                window.EMAILJS_CONFIG.SERVICE_ID,
+                window.EMAILJS_CONFIG.TEMPLATE_ID,
+                templateParams
+            )
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+                resolve();
+            })
+            .catch((error) => {
+                console.error('Email sending failed:', error);
+                reject(error);
+            });
+        });
+    }
+
+    showFormFeedback(message, type) {
+        const feedback = document.getElementById('formFeedback');
+        if (!feedback) return;
+
+        feedback.textContent = message;
+        feedback.className = `form-submit-feedback ${type}`;
+        feedback.style.display = 'block';
+
+        // Auto-hide success messages
+        if (type === 'success') {
+            setTimeout(() => {
+                feedback.style.display = 'none';
+            }, 5000);
+        }
+    }
+
+    clearAllValidationStates() {
+        const groups = document.querySelectorAll('.form-group');
+        groups.forEach(group => {
+            group.classList.remove('error', 'success');
+            const errorElement = group.querySelector('.error-message');
+            if (errorElement) {
+                errorElement.textContent = '';
+            }
+        });
+
+        // Reset character counter
+        const counter = document.getElementById('charCounter');
+        if (counter) {
+            counter.textContent = '0 / 1000 characters';
+            counter.classList.remove('warning', 'error');
+        }
     }
 }
 
-function handleContactFormSubmit(form) {
-    const formData = new FormData(form);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message'),
-        newsletter: formData.get('newsletter') === 'on'
-    };
-
-    // Simulate form submission (in a real app, you'd send this to a server)
-    console.log('Contact form submitted:', data);
-    
-    // Show success message
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    
-    // Reset form
-    form.reset();
-}
-
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 16px 24px;
-        background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : type === 'warning' ? '#ffc107' : '#007bff'};
-        color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        z-index: 10000;
-        font-family: var(--font-family);
-        font-weight: 500;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    `;
-
-    document.body.appendChild(notification);
-
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 10);
-
-    // Remove after 4 seconds
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 300);
-    }, 4000);
+// Contact form functionality for contact page
+function initializeContactForm() {
+    new FormValidator();
 }
 
 // Add smooth scrolling for anchor links

@@ -95,19 +95,42 @@
                     <div class="contact-form-container">
                         <div class="contact-form">
                             <h2>Send a Message</h2>
+                            <div class="form-submit-feedback" id="formFeedback"></div>
                             <form id="contactForm" class="form">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" required>
+                                <div class="form-group" id="nameGroup">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+                                    <div class="validation-icon success">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validation-icon error">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="error-message" id="nameError"></div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="email">Email</label>
+                                <div class="form-group" id="emailGroup">
+                                    <label for="email">Email *</label>
                                     <input type="email" id="email" name="email" required>
+                                    <div class="validation-icon success">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validation-icon error">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="error-message" id="emailError"></div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
+                                <div class="form-group" id="subjectGroup">
+                                    <label for="subject">Subject *</label>
                                     <select id="subject" name="subject" required>
                                         <option value="">Select a subject</option>
                                         <option value="feedback">General Feedback</option>
@@ -116,11 +139,34 @@
                                         <option value="privacy">Privacy Question</option>
                                         <option value="other">Other</option>
                                     </select>
+                                    <div class="validation-icon success">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validation-icon error">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="error-message" id="subjectError"></div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" rows="6" required placeholder="Tell us what's on your mind..."></textarea>
+                                <div class="form-group" id="messageGroup">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="6" required placeholder="Tell us what's on your mind..." minlength="10" maxlength="1000"></textarea>
+                                    <div class="char-counter" id="charCounter">0 / 1000 characters</div>
+                                    <div class="validation-icon success">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validation-icon error">
+                                        <svg viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div class="error-message" id="messageError"></div>
                                 </div>
 
                                 <div class="form-group">
@@ -131,7 +177,7 @@
                                     </label>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                             </form>
                         </div>
                     </div>
@@ -231,6 +277,16 @@
         </div>
     </footer>
 
+    <!-- EmailJS Configuration -->
+    <script src="config.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with my public key
+            emailjs.init(window.EMAILJS_CONFIG.PUBLIC_KEY);
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 
