@@ -1843,3 +1843,159 @@ body {
     left: 100%;
   }
 }
+
+/* Form Validation Styles */
+.form-group {
+  position: relative;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.form-group.error .error-message {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.form-group.success .success-message {
+  display: block;
+  color: #28a745;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.error-message,
+.success-message {
+  display: none;
+}
+
+.form-group.error label {
+  color: #dc3545;
+}
+
+.form-group.success label {
+  color: #28a745;
+}
+
+/* Form submission feedback */
+.form-submit-feedback {
+  padding: 16px;
+  border-radius: var(--radius-medium);
+  margin-bottom: 24px;
+  font-weight: 500;
+  display: none;
+}
+
+.form-submit-feedback.success {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.form-submit-feedback.error {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+/* Loading state for submit button */
+.btn-loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Character counter for textarea */
+.char-counter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.char-counter.warning {
+  color: #ffc107;
+}
+
+.char-counter.error {
+  color: #dc3545;
+}
+
+/* Form validation icons */
+.form-group .validation-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.form-group.success .validation-icon.success {
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 70%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #28a745;
+}
+
+.form-group.error .validation-icon.error {
+  display: block;
+  color: #dc3545;
+}
+
+/* Mobile responsive adjustments for form validation */
+@media (max-width: 768px) {
+  .validation-icon {
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .form-group.success .validation-icon.success {
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .char-counter {
+    font-size: 0.7rem;
+  }
+}
